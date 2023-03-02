@@ -25,7 +25,7 @@ k3s_use_unsupported_config: true
 
 # Control Plane registration address
 # ...this is set to my kube-vip address
-k3s_registration_address: 10.0.105.34
+k3s_registration_address: 10.0.110.18
 
 #
 # /var/lib/rancher/k3s/server/manifests
