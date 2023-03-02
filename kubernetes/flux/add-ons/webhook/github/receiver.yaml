@@ -1,0 +1,19 @@
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta1
+kind: Receiver
+metadata:
+  name: k3s-test-cluster
+  namespace: flux-system
+spec:
+  type: github
+  events:
+    - "ping"
+    - "push"
+  secretRef:
+    name: github-webhook-token
+  resources:
+    - kind: GitRepository
+      name: cluster
+    - kind: Kustomization
+      name: apps
+      apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
