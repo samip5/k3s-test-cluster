@@ -5,3 +5,4 @@ resources:
   - bjw-s.yaml
   - bitnami.yaml
   - jetstack.yaml
+  - kubernetes-sigs-external-dns.yaml
