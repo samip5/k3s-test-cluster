@@ -3,8 +3,6 @@ kind: Kustomization
 metadata:
   name: apps-cert-manager
   namespace: flux-system
-  labels:
-    substitution.flux.home.arpa/enabled: "true"
 spec:
   path: ./kubernetes/apps/cert-manager/cert-mngr/app
   prune: true
@@ -28,7 +26,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: pps-cert-manager
+    - name: apps-cert-manager
   path: ./kubernetes/apps/cert-manager/cert-mngr/issuers
   prune: true
   sourceRef:
