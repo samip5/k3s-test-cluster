@@ -3,4 +3,6 @@ kind: Kustomization
 resources:
   - ns.yaml
   - pref-dual-stack
+  - netshoot
+  - k8s-gateway
   - external-dns/ks.yaml
