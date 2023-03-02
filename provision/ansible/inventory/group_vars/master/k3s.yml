@@ -25,7 +25,7 @@ k3s_server:
   disable-cloud-controller: true
   disable-kube-proxy: true
   # Network CIDR to use for pod IPs
-  cluster-cidr: "10.45.0.0/16,2001:67c:1104:e03d::/112"
+  cluster-cidr: "10.45.0.0/16,2001:67c:1104:d000::/56"
   # Network CIDR to use for service IPs
   service-cidr: "10.46.0.0/16,2001:67c:1104:e03e::/112"
   kubelet-arg:
