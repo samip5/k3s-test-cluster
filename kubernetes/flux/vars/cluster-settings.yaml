@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-settings
+  namespace: flux-system
+data:
+  NET_NODE_CIDR: "10.0.110.0/24"
+  NET_NODE_IPv6_CIDR: "2001:67c:1104:e110::/64"
+  NET_POD_CIDR: "10.45.0.0/16"
+  NET_POD_IPv6_CIDR: "2001:67c:1104:e03d::/64"
+  NET_SVC_CIDR: "10.46.0.0/16"
+  NET_SVC_IPv6_CIDR: "2001:67c:1104:e03e::/112"
