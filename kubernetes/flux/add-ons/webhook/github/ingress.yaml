@@ -19,3 +19,4 @@ spec:
   tls:
     - hosts:
         - "gh-hook.${SECRET_DOMAIN}"
+      secretName: gh-hook-tls
