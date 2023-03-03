@@ -11,8 +11,9 @@ spec:
       name: letsencrypt-staging
     solvers:
       - dns01:
-          cloudflare:
-            email: "${SECRET_EMAIL}"
-            apiKeySecretRef:
-              name: cloudflare-token-secret
-              key: cloudflare-token
+         webhook:
+           groupName: acme.samipsolutions.fi
+           solverName: pdns
+           config:
+             secretName: pdns-secret
+             apiUrl: ${PDNS_SAMIPSOLUTIONS_API_URL}

@@ -1,0 +1,19 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: cert-manager-webhook-powerdns
+  namespace: cert-manager
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: cert-manager-webhook-powerdns
+      version: 0.1.8
+      sourceRef:
+        kind: HelmRepository
+        name: cert-manager-webhook-powerdns
+        namespace: flux-system
+      interval: 5m
+  values:
+    groupName: acme.samipsolutions.fi
