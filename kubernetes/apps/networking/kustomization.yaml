@@ -6,3 +6,5 @@ resources:
   - netshoot
   - k8s-gateway
   - external-dns/ks.yaml
+  - metallb/ks.yaml
+  - metallb/ks-config.yaml

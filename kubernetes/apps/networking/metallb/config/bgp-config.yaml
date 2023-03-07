@@ -1,0 +1,53 @@
+---
+apiVersion: metallb.io/v1beta2
+kind: BGPPeer
+metadata:
+  name: home-router-v4
+  namespace: metallb-system
+spec:
+  holdTime: 1m30s
+  myASN: 213021
+  peerASN: 213021
+  peerAddress: 10.0.110.1
+  # https://github.com/metallb/metallb/issues/1537
+  ebgpMultiHop: false
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: default-pool
+  namespace: metallb-system
+spec:
+  addresses:
+    - 10.46.2.0/24
+    - 2001:67c:1104:e03e::100-2001:67c:1104:fc00::256
+  avoidBuggyIPs: true
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: nginx
+  namespace: metallb-system
+spec:
+  addresses:
+    - 185.218.193.61/32
+    - 2001:67c:1104:fc00::4443/128
+    - 192.168.10.80/32
+---
+apiVersion: metallb.io/v1beta1
+kind: BGPAdvertisement
+metadata:
+  name: bgp-lb
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+    - nginx
+---
+apiVersion: metallb.io/v1beta1
+kind: BGPAdvertisement
+metadata:
+  name: bgp-other
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+    - default-pool
