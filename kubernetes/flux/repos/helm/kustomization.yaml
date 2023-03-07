@@ -7,3 +7,4 @@ resources:
   - bitnami.yaml
   - jetstack.yaml
   - kubernetes-sigs-external-dns.yaml
+  - metallb.yaml
