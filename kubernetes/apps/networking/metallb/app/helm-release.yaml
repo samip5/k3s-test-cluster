@@ -53,6 +53,7 @@ spec:
                     - |-
                       ip r add local 10.46.1.0/24 dev lo table local proto 66 scope host || true
                       ip r add local 185.218.193.58/32 dev lo table local proto 66 scope host || true
+                      ip -6 r add local 2001:67c:1104:e03e::/112 dev lo table local proto 66 scope host || true
                   image: alpine
                   imagePullPolicy: IfNotPresent
                   securityContext:
