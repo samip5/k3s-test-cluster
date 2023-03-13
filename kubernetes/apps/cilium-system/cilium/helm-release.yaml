@@ -46,7 +46,7 @@ spec:
       mode: "kubernetes"
 
     ingressController:
-      enabled: true
+      enabled: false
       loadbalancerMode: shared
     ipv6:
       enabled: true
