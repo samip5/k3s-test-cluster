@@ -4,5 +4,6 @@ metadata:
   name: "main-pool"
 spec:
   cidrs:
-    - cidr: "10.46.1.0/24"
+#    - cidr: "10.46.1.0/24"
+    - cidr: "186.218.193.58/32"
     - cidr: "2001:67c:1104:e03e::/112"
